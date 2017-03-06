@@ -1,0 +1,252 @@
+@import "partials/setup";
+
+// #F78C25
+
+html {
+	text-align: center;
+	color: #F78C25;
+	font-family: "Quicksand";
+	letter-spacing: 1px;
+}
+
+body {
+	background: #efefef;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	background: #F78C25;
+	color: white;
+
+	.socialContainer a {
+		letter-spacing: 5px;
+		color: white;
+		font-size: 20px;
+		transition: all .3s ease-out;
+
+		&:hover, &:focus {
+			color: #25C9F7;
+		}
+	}
+}
+
+label {
+	cursor: pointer;
+}
+
+h1 {
+	text-transform: uppercase;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.animeContainer {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.animeContent {
+	transition: all .4s ease;
+	background: white;
+	border: 2px solid gray;
+	margin-bottom: 30px;
+}
+
+.animeContent:hover, .active {
+	box-shadow: inset 0 0 5px 1px gray;
+}
+
+.animeContent img {
+	width: 400px;
+	height: 300px;
+	display: block;
+}
+
+.popupContainer {
+	// position: absolute;
+	display: none;
+	width: 800px;
+	left: 50%;
+	top: 50%;
+	// transform: translate(0,0);
+	background: rgba(0,0,0,0.8);
+	color: white;
+	padding: 50px;
+	// transition: all .4s ease;
+}
+
+.popupColor {
+	background: transparent;
+}
+
+input[type="submit"] {
+	border: 2px solid white;
+	color: #F78C25;
+	background: transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	margin: 5px;
+
+	&:hover {
+		border: 2px solid #AA5A0D;
+	}
+}
+
+.pick {
+	font-size: 20px;
+}
+
+.randomContainer {
+	max-width: 80%;
+	margin: 0 auto;
+	position: relative;
+
+	img {
+		width: 100%;
+		height: 500px;
+		margin-bottom: 20px;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		margin: 0 auto;
+		width: 200px;
+		height: 3px;
+		bottom: -30px;
+		left: 0;
+		right: 0;
+		opacity: 0;
+		background: #FF9E40;
+	}
+
+	&.opacity:before {
+		opacity: 1;
+	}
+}
+
+.randomContainer:hover img{
+	box-shadow: inset 0 0 0 10px black;
+}
+
+.loadie {
+	z-index: 9999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #25C9F7;
+	height: 4px;
+	width: 0;
+	transition: width 1s ease-out;
+}
+
+@media all and (max-width: 580px) {
+	header {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.learnMore {
+	border: 2px solid red;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	padding: 5px 10px;
+	font-style: italic;
+	transition: all 0.25s;
+
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		width: 0%;
+		height: 0%;
+		border: 2px solid transparent;
+	}
+
+	&::before {
+		top: 0;
+		left: 0;
+	}
+
+	&::after {
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.learnMore:hover {
+	border: 2px solid blue;
+
+	&::before, &::after {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// .animeContent img {
+// 	// outline: 2px solid red;
+// 	// transition: all 0.4s ease;
+// 	border: 2px solid red;
+// 	border-color: red;
+
+// 	position: relative;
+// 	vertical-align: middle;
+// 	transition: color 0.25s;
+
+
+// 	&::before, &::after {
+// 	    content: '';
+// 	    position: absolute;
+// 	    width: 100%;
+// 	    height: 100%;
+// 	    border: 2px solid transparent;
+// 	    // width: 0;
+// 	    // height: 0;
+// 	  }
+
+// 	 &::before {
+// 		top: 0;
+// 		left: 0;
+// 	 }
+
+// 	 &::after {
+// 	 	bottom: 0;
+// 	 	right: 0;
+// 	 }
+
+// 	 &:hover {
+// 	 	color: blue;
+// 	 }
+
+// 	 &:hover::before,
+// 	   &:hover::after {
+// 	     width: 100%;
+// 	     height: 100%;
+// 	   }
+
+// 	   &:hover::before {
+// 	   	border-top-color: blue;
+// 	   	border-right-color: blue;
+// 	   	transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+// 	   }
+// 	   &:hover::after {
+// 	   	border-bottom-color: blue;
+// 	   	border-left-color: blue;
+// 	   	transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+// 	   }
+// }
